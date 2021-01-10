@@ -1,7 +1,9 @@
-$topnav-background-color: #222;
+$topnav-background-color: #fff;
 :host {
     .navbar {
         background-color: $topnav-background-color;
+        box-shadow: 0 6px 6px -6px rgba(0,0,0,.2);
+        height: 80px;
 
         .navbar-brand {
             color: #fff;
@@ -11,9 +13,13 @@ $topnav-background-color: #222;
             color: #999;
 
             &:hover {
-                color: #fff;
+                color: #123184;
             }
         }
+    }
+
+    .right {
+        float: right;
     }
 
     .messages {
@@ -43,5 +49,9 @@ $topnav-background-color: #222;
                 margin: 0;
             }
         }
+    }
+
+    .collapse {
+        float: right;
     }
 }

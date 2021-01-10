@@ -14,6 +14,7 @@ const routes: Routes = [
         //     loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule)
         // },
         { path: 'all-ticket', loadChildren: () => import('./all-ticket/all-ticket.module').then((m) => m.AllTicketModule) },
+        { path: 'my-ticket', loadChildren: () => import('./my-ticket/my-ticket.module').then((m) => m.MyTicketModule) },
     ]
 }
 ];

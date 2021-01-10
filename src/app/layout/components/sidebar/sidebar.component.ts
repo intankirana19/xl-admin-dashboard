@@ -11,6 +11,7 @@ export class SidebarComponent implements OnInit {
   collapsed: boolean;
   showMenu: string;
   pushRightClass: string;
+  isSLogo: boolean;
 
   @Output() collapsedEvent = new EventEmitter<boolean>();
 
@@ -25,6 +26,7 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
       this.isActive = false;
       this.collapsed = false;
+      this.isSLogo= false;
       this.showMenu = '';
       this.pushRightClass = 'push-right';
   }
@@ -44,6 +46,7 @@ export class SidebarComponent implements OnInit {
   toggleCollapsed() {
       this.collapsed = !this.collapsed;
       this.collapsedEvent.emit(this.collapsed);
+      this.isSLogo = true;
   }
 
   isToggled(): boolean {

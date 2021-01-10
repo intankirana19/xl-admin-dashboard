@@ -1,4 +1,4 @@
-$topnav-background-color: #222;
+$topnav-background-color: #123184;
 :host {
     display: block;
 }
@@ -102,5 +102,6 @@ $topnav-background-color: #222;
         -webkit-border-radius: 50%;
         border-radius: 50%;
         border: 2px solid #fff;
+        background-color: #fff;
     }
 }

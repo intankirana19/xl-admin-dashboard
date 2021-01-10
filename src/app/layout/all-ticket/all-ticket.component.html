@@ -1,61 +1,83 @@
 <div [@routerTransition]>
-    <app-page-header [heading]="'Tables'" [icon]="'fa-table'"></app-page-header>
+    <app-page-header [heading]="'All Tickets'" [icon]="'fa-list'"></app-page-header>
     <div class="row">
-        <div class="col col-xl-6 col-lg-12">
+        <div class="col col-xl-12 col-lg-12">
             <div class="card mb-3">
-                <div class="card-header">Striped Rows</div>
+                <div class="card-header">
+                    <form>
+                        <div class="row">
+                            <div class="col-3 form-group">
+                                <select class="form-control"  (change)="setFilter($event.target.value)">
+                                    <option value="">filter by</option>
+                                    <option value="ticket">Ticket Name</option>
+                                    <option value="reporter">Reporter</option>
+                                    <option value="created">Create Date</option>
+                                    <option value="status">Status</option>
+                                </select>
+                            </div>
+                            <div class="col-1"></div>
+                            <div class="col-4 form-group input-group" *ngIf="isTicket">
+                                <input class="form-control" type="text" placeholder="input ticket number"/>
+                                <div class="input-group-append">
+                                    <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                            <div class="col-4 form-group input-group" *ngIf="isReporter">
+                                <input class="form-control" type="text" placeholder="input reporter"/>
+                                <div class="input-group-append">
+                                    <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                            <div class="col-4 form-group input-group" *ngIf="isCreated">
+                                <input [owlDateTime]="cdate" [owlDateTimeTrigger]="cdate" placeholder="input create date">
+                                <owl-date-time [pickerType]="'calendar'" #cdate></owl-date-time>
+                                <!-- <input class="form-control" type="text" placeholder="input create date"/>
+                                <div class="input-group-append">
+                                    <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
+                                </div> -->
+                            </div>
+                            <div class="col-4 form-group" *ngIf="isStatus">
+                                <select class="form-control" #selectStatus (change)="setStatus(selectStatus.value)">
+                                    <option value="">Choose Status</option>
+                                    <option value="high">High Priority</option>
+                                    <option value="medium">Medium Priority</option>
+                                    <option value="low">Low Priority</option>
+                                </select>
+                            </div>
+                            <div class="col-2" *ngIf="isTicket || isReporter || isCreated || isStatus">
+                                <button class="btn btn-warning" type="submit">Clear Filter</button>
+                            </div>
+                            <div *ngIf="!isTicket && !isReporter && !isCreated && !isStatus" class="col-6"></div>
+                            <div class="col-2">
+                                <button class="btn btn-info" type="submit"><i class="fa fa-fw fa-ticket"></i>&nbsp;New Ticket</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
                 <div class="card-body table-responsive">
                     <table class="table table-hover table-striped">
                         <thead>
                             <tr>
-                                <th>Page</th>
-                                <th>Visits</th>
-                                <th>% New Visits</th>
-                                <th>Revenue</th>
+                                <th>ID</th>
+                                <th>Ticket Name</th>
+                                <th>Reporter</th>
+                                <th>Create Date</th>
+                                <th>Status</th>
+                                <th>Activity</th>
+                                <th>Product Stream</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>/index.html</td>
-                                <td>1265</td>
-                                <td>32.3%</td>
-                                <td>$321.33</td>
-                            </tr>
-                            <tr>
-                                <td>/about.html</td>
-                                <td>261</td>
-                                <td>33.3%</td>
-                                <td>$234.12</td>
-                            </tr>
-                            <tr>
-                                <td>/sales.html</td>
-                                <td>665</td>
-                                <td>21.3%</td>
-                                <td>$16.34</td>
-                            </tr>
-                            <tr>
-                                <td>/blog.html</td>
-                                <td>9516</td>
-                                <td>89.3%</td>
-                                <td>$1644.43</td>
-                            </tr>
-                            <tr>
-                                <td>/404.html</td>
-                                <td>23</td>
-                                <td>34.3%</td>
-                                <td>$23.52</td>
-                            </tr>
-                            <tr>
-                                <td>/services.html</td>
-                                <td>421</td>
-                                <td>60.3%</td>
-                                <td>$724.32</td>
-                            </tr>
-                            <tr>
-                                <td>/blog/post.html</td>
-                                <td>1233</td>
-                                <td>93.2%</td>
-                                <td>$126.34</td>
+                                <td>{{ ticket.id }}</td>
+                                <td>{{ ticket.name }}</td>
+                                <td>{{ ticket.reporter }}</td>
+                                <td>{{ ticket.create_date }}</td>
+                                <td>{{ ticket.status }}</td>
+                                <td>{{ ticket.activity }}</td>
+                                <td>{{ ticket.prod_stream }}</td>
+                                <td>{{ ticket.activity }}</td>
                             </tr>
                         </tbody>
                     </table>

@@ -1,30 +1,47 @@
 <nav class="navbar navbar-expand-lg fixed-top">
-    <a class="navbar-brand" href="#">SB Admin Angular9 BS4 </a>
+    <a class="navbar-brand" href="#"><img class="user-avatar" src="assets/images/XL_Axiata-Logo.wine.svg" width="100px" /></a>
     <button (click)="toggleSidebar()" class="navbar-toggler" type="button">
         <!-- <span class="navbar-toggler-icon"></span> -->
         <i aria-hidden="true" class="fa fa-bars text-muted"></i>
     </button>
     <div class="collapse navbar-collapse">
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" placeholder="{{ 'Search' | translate }}" type="text" />
-        </form>
+        <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" placeholder="Search" type="text" />
+        </form> -->
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown" ngbDropdown>
                 <a class="nav-link" href="javascript:void(0)" ngbDropdownToggle>
-                    <i class="fa fa-user"></i>Hi, Intan<b class="caret"></b>
+                    <i class="fa fa-bell"></i> <b class="caret"></b><span class="sr-only">(current)</span>
                 </a>
                 <div class="dropdown-menu-right" ngbDropdownMenu>
                     <a class="dropdown-item" href="javascript:void(0)">
-                        <i class="fa fa-fw fa-user"></i> {{ 'Profile' | translate }}
+                        Pending <span class="badge badge-info">6</span>
                     </a>
                     <a class="dropdown-item" href="javascript:void(0)">
-                        <i class="fa fa-fw fa-envelope"></i> {{ 'Inbox' | translate }}
+                        Queue <span class="badge badge-info"> 13</span>
                     </a>
                     <a class="dropdown-item" href="javascript:void(0)">
-                        <i class="fa fa-fw fa-gear"></i> {{ 'Settings' | translate }}
+                        Mail <span class="badge badge-info"> 45</span>
+                    </a>
+                    <li class="dropdown-divider"></li>
+                    <a class="dropdown-item" href="javascript:void(0)">
+                        View All
+                    </a>
+                </div>
+            </li>
+            <li class="nav-item dropdown" ngbDropdown>
+                <a class="nav-link" href="javascript:void(0)" ngbDropdownToggle>
+                    <i class="fa fa-user"></i>&nbsp;Hi, Intan <b class="caret"></b>
+                </a>
+                <div class="dropdown-menu-right" ngbDropdownMenu>
+                    <a class="dropdown-item" href="javascript:void(0)">
+                        <i class="fa fa-fw fa-user"></i> Role: Admin
+                    </a>
+                    <a class="dropdown-item" href="javascript:void(0)">
+                        <i class="fa fa-fw fa-envelope"></i>Profile
                     </a>
                     <a (click)="onLoggedout()" [routerLink]="['/login']" class="dropdown-item">
-                        <i class="fa fa-fw fa-power-off"></i> {{ 'Log Out' | translate }}
+                        <i class="fa fa-fw fa-power-off"></i>Log Out
                     </a>
                 </div>
             </li>

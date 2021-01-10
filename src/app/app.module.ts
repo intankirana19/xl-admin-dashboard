@@ -1,3 +1,5 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthGuard } from './shared/guard/auth.guard';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -10,15 +12,16 @@ import { LayoutComponent } from './layout/layout.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    NotFoundComponent,
-    LayoutComponent,
+    // LoginComponent,
+    // NotFoundComponent,
+    // LayoutComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

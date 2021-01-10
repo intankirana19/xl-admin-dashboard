@@ -1,19 +1,20 @@
-$topnav-background-color: #222;
+$topnav-background-color: #123184;
 .sidebar {
     border-radius: 0;
     position: fixed;
-    z-index: 1000;
-    top: 56px;
+    z-index: 1050;
+    top: 0px;
     left: 235px;
     width: 235px;
     margin-left: -235px;
-    margin-bottom: 48px;
+    // margin-bottom: 48px;
     border: none;
     border-radius: 0;
     overflow-y: auto;
     background-color: $topnav-background-color;
     bottom: 0;
     overflow-x: hidden;
+    padding-top: 20px;
     padding-bottom: 40px;
     white-space: nowrap;
     -webkit-transition: all 0.2s ease-in-out;
@@ -92,7 +93,7 @@ $topnav-background-color: #222;
         }
 
         .panel-collapse {
-            border-radious: 0;
+            border-radius: 0;
             border: none;
 
             .panel-body {
@@ -117,6 +118,20 @@ $topnav-background-color: #222;
         }
     }
 }
+
+.user-avatar {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background-color: #fff;
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+.user-avatar-small {
+    margin-left: 10px;
+}
+
 
 .nested-menu {
     .list-group-item {
@@ -151,7 +166,7 @@ $topnav-background-color: #222;
 
 @media screen and (max-width: 992px) {
     .sidebar {
-        top: 54px;
+        top: 0px;
         left: 0px;
     }
 }
