@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { MyTicketRoutingModule } from './my-ticket-routing.module';
 import { PageHeaderModule } from 'src/app/shared';
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 
 @NgModule({
@@ -11,7 +12,9 @@ import { PageHeaderModule } from 'src/app/shared';
   imports: [
     CommonModule,
     MyTicketRoutingModule,
-    PageHeaderModule
+    PageHeaderModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule,
   ]
 })
 export class MyTicketModule { }

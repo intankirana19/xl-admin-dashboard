@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/delay';
-import { Observable } from 'rxjs/internal/Observable';
-import { TICKET } from '../models/ticket-mock';
+import { TICKET } from './../data/ticket-mock';
+import { Ticket } from './../models/ticket.model';
 @Injectable()
+export class TicketService {
 
-export class AdventureTimeService {
+    ticketList: Ticket[] = TICKET;
+
 constructor() { }
 
-    getTickets(): Observable<any[]>{
-        return Observable.of(TICKET).delay(100);
+    getTickets() {
+        return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const data = { res: this.ticketList };
+            resolve(data);
+        }, 2000);
+        });
     }
     
 }

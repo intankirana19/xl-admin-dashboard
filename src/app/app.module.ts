@@ -1,3 +1,4 @@
+import { TicketService } from './core/service/ticket.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from './shared/guard/auth.guard';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,7 +22,7 @@ import { LayoutComponent } from './layout/layout.component';
     BrowserAnimationsModule,
     AppRoutingModule,
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard,TicketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

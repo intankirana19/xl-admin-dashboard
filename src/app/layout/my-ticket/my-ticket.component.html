@@ -1,1 +1,91 @@
-<p>my-ticket works!</p>
+<div [@routerTransition]>
+    <app-page-header [heading]="'My Tickets'" [icon]="'fa-ticket'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12">
+            <div class="card mb-3">
+                <!-- <div class="card-header">
+                    <form>
+                        <div class="row">
+                            <div class="col-3 form-group">
+                                <select class="form-control"  (change)="setFilter($event.target.value)">
+                                    <option value="">filter by</option>
+                                    <option value="ticket">Ticket Name</option>
+                                    <option value="reporter">Reporter</option>
+                                    <option value="created">Create Date</option>
+                                    <option value="status">Status</option>
+                                </select>
+                            </div>
+                            <div class="col-1"></div>
+                            <div class="col-4 form-group input-group" *ngIf="isTicket">
+                                <input class="form-control" type="text" placeholder="input ticket number"/>
+                                <div class="input-group-append">
+                                    <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                            <div class="col-4 form-group input-group" *ngIf="isReporter">
+                                <input class="form-control" type="text" placeholder="input reporter"/>
+                                <div class="input-group-append">
+                                    <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                            <div class="col-4 form-group input-group" *ngIf="isCreated">
+                                <input [owlDateTime]="cdate" [owlDateTimeTrigger]="cdate" placeholder="input create date">
+                                <owl-date-time [pickerType]="'calendar'" #cdate></owl-date-time>
+                                <!-- <input class="form-control" type="text" placeholder="input create date"/>
+                                <div class="input-group-append">
+                                    <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
+                                </div> --
+                            </div>
+                            <div class="col-4 form-group" *ngIf="isStatus">
+                                <select class="form-control" #selectStatus (change)="setStatus(selectStatus.value)">
+                                    <option value="">Choose Status</option>
+                                    <option value="high">High Priority</option>
+                                    <option value="medium">Medium Priority</option>
+                                    <option value="low">Low Priority</option>
+                                </select>
+                            </div>
+                            <div class="col-2" *ngIf="isTicket || isReporter || isCreated || isStatus">
+                                <button class="btn btn-warning" type="submit">Clear Filter</button>
+                            </div>
+                            <div *ngIf="!isTicket && !isReporter && !isCreated && !isStatus" class="col-6"></div>
+                            <div class="col-2">
+                                <button class="btn btn-info" type="submit"><i class="fa fa-fw fa-ticket"></i>&nbsp;New Ticket</button>
+                            </div>
+                        </div>
+                    </form>
+                </div> -->
+                <div class="card-body table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Ticket Name</th>
+                                <th>Reporter</th>
+                                <th>Create Date</th>
+                                <th>Status</th>
+                                <th>Activity</th>
+                                <th>Product Stream</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let ticket of tickets">
+                                <td>{{ ticket.id }}</td>
+                                <td>{{ ticket.name }}</td>
+                                <td>{{ ticket.reporter }}</td>
+                                <td>{{ ticket.create_date }}</td>
+                                <td>{{ ticket.status }}</td>
+                                <!-- <td *ngIf="ticket.status ==== 'HIGH'"><button class="btn btn-danger" disabled>HIGH</button></td>
+                                <td *ngIf="ticket.status ==== 'MEDIUM'"><button class="btn btn-warning" disabled>MEDIUM</button></td>
+                                <td *ngIf="ticket.status ==== 'LOW'"><button class="btn btn-success" disabled>LOW</button></td> -->
+                                <td>{{ ticket.activity }}</td>
+                                <td>{{ ticket.prod_stream }}</td>
+                                <td>{{ ticket.activity }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -2,10 +2,10 @@
     <a *ngIf="!isSLogo" href="#"><img class="user-avatar" src="assets/images/XL_Axiata-Logo.wine.svg" width="150px" /></a>
     <a *ngIf="isSLogo"  href="#"><img class="user-avatar-small" src="assets/images/single logo.png" width="40px" /></a>
     <div class="list-group">
-        <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/dashboard">
+        <!-- <a [routerLinkActive]="['router-link-active']" class="list-group-item" routerLink="/dashboard">
             <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;
             <span>Dashboard</span>
-        </a>
+        </a> -->
         <a [routerLinkActive]="['router-link-active']" [routerLink]="['/all-ticket']" class="list-group-item">
             <i class="fa fa-th-list"></i>&nbsp;
             <span>All Tickets</span>

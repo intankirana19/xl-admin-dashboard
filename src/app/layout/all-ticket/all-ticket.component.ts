@@ -1,3 +1,5 @@
+import { TicketService } from './../../core/service/ticket.service';
+import { Ticket } from './../../core/models/ticket.model';
 import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-all-ticket',
@@ -10,11 +12,22 @@ export class AllTicketComponent implements OnInit {
   isCreated: boolean;
   isStatus: boolean;
 
-  ticket: TICKET;
+  tickets: Ticket[] = [];
 
-  constructor() { }
+  constructor(
+    private getAllTickets: TicketService,
+  ) { }
 
   ngOnInit() {
+    const promise = this.getAllTickets.getTickets();
+    promise.then(
+      response => {
+        this.tickets = response["res"];
+      },
+      error => {
+        console.log("error " + error);
+      }
+    );
     this.isTicket = false;
     this.isReporter = false;
     this.isCreated = false;

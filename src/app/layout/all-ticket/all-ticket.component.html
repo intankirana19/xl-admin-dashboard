@@ -69,12 +69,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr *ngFor="let ticket of tickets">
                                 <td>{{ ticket.id }}</td>
                                 <td>{{ ticket.name }}</td>
                                 <td>{{ ticket.reporter }}</td>
                                 <td>{{ ticket.create_date }}</td>
                                 <td>{{ ticket.status }}</td>
+                                <!-- <td *ngIf="ticket.status ==== 'HIGH'"><button class="btn btn-danger" disabled>HIGH</button></td>
+                                <td *ngIf="ticket.status ==== 'MEDIUM'"><button class="btn btn-warning" disabled>MEDIUM</button></td>
+                                <td *ngIf="ticket.status ==== 'LOW'"><button class="btn btn-success" disabled>LOW</button></td> -->
                                 <td>{{ ticket.activity }}</td>
                                 <td>{{ ticket.prod_stream }}</td>
                                 <td>{{ ticket.activity }}</td>

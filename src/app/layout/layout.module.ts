@@ -17,6 +17,6 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
     LayoutRoutingModule, 
     NgbDropdownModule,
     // BrowserAnimationsModule
-  ]
+  ],
 })
 export class LayoutModule { }

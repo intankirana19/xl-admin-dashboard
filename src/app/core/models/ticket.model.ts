@@ -3,7 +3,7 @@ export interface Ticket {
     name: string;
     reporter: string;
     create_date: string;
-    status: number;
+    status: string;
     activity: string;
     prod_stream: string;
     action: string;
